@@ -1,6 +1,5 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "react-native-elements";
@@ -14,7 +13,6 @@ import DeaconsList from "./src/screens/DeaconsList";
 import FamiliesList from "./src/screens/FamiliesList";
 import VisitationList from "./src/screens/VisitationList";
 
-const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -22,17 +20,15 @@ export default function App() {
     <ThemeProvider>
       <NavigationContainer>
         <Provider store={store}>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="Families List">
             <Stack.Screen name="Profile" component={Profile} />
-          </Stack.Navigator>
-          <Tab.Navigator>
-            <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Deacons List" component={DeaconsList} />
-            <Tab.Screen name="Families List" component={FamiliesList} />
-            <Tab.Screen name="Visitation List" component={VisitationList} />
-          </Tab.Navigator>
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Deacons List" component={DeaconsList} />
+            <Stack.Screen name="Families List" component={FamiliesList} />
+            <Stack.Screen name="Visitation List" component={VisitationList} />
+          </ Stack.Navigator>
         </Provider>
       </NavigationContainer>
     </ThemeProvider>
   );
-}
+};;

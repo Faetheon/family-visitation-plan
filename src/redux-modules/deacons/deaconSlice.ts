@@ -1,7 +1,7 @@
 import reduxToolkit from "@reduxjs/toolkit";
 
-export const counterSlice = reduxToolkit.createSlice({
-  name: "counter",
+const deaconSlice = reduxToolkit.createSlice({
+  name: "deacons",
   initialState: 0,
   reducers: {
     increment: state => state + 1,
@@ -12,3 +12,11 @@ export const counterSlice = reduxToolkit.createSlice({
     }
   }
 });
+
+export const {
+  increment,
+  decrement,
+  add
+} = deaconSlice.actions;
+
+export default deaconSlice.reducer;

@@ -1,12 +1,21 @@
 import React from 'react';
-import { Text, SafeAreaView } from "react-native";
-import { Button } from "react-native-elements";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { Text } from 'react-native-elements';
+import ProfileButton from '../components/ProfileButton';
+import TabNavigator from '../components/TabNavigator';
 
+const styles = StyleSheet.create({
+  mainView: {
+    flex: 1
+  }
+});
 
 const Home = ({ navigation }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.mainView}>
+      <ProfileButton />
       <Text>Home</Text>
+      <TabNavigator />
     </SafeAreaView>
   );
 };

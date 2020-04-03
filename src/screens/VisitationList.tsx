@@ -1,11 +1,18 @@
 import React from 'react';
-import { Text, SafeAreaView } from "react-native";
+import { Text, SafeAreaView, StyleSheet } from "react-native";
+import TabNavigator from '../components/TabNavigator';
 
+const styles = StyleSheet.create({
+  mainView: {
+    flex: 1
+  }
+});
 
 const VisitationList = ({ navigation }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.mainView}>
       <Text>Visitation List</Text>
+      <TabNavigator />
     </SafeAreaView>
   );
 };

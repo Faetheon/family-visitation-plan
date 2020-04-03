@@ -14,16 +14,8 @@ import Home from "./src/screens/Home";
 import DeaconsList from "./src/screens/DeaconsList";
 import FamiliesList from "./src/screens/FamiliesList";
 import VisitationList from "./src/screens/VisitationList";
-import ProfileButton from "./src/components/ProfileButton";
 
-const styles = StyleSheet.create({
-  ProfileButtonTitle: {
-    display: "none"
-  },
-  ProfileButton: {
-    height: 10,
-  }
-});
+const styles = StyleSheet.create({});
 
 const Stack = createStackNavigator();
 
@@ -34,21 +26,41 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName="Home"
-
           >
-            <Stack.Screen name="Profile" component={Profile} />
             <Stack.Screen
-              name="ProfileButton"
-              component={ProfileButton}
+              name="Profile"
+              component={Profile}
               options={{
-                headerTransparent: true,
-                headerTitleStyle: styles.ProfileButtonTitle,
               }}
             />
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="Deacons List" component={DeaconsList} />
-            <Stack.Screen name="Families List" component={FamiliesList} />
-            <Stack.Screen name="Visitation List" component={VisitationList} />
+            <Stack.Screen
+              name="Home"
+              component={Home}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Deacon List"
+              component={DeaconsList}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Family List"
+              component={FamiliesList}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen
+              name="Visit List"
+              component={VisitationList}
+              options={{
+                headerShown: false,
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>

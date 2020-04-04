@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, SafeAreaView, StyleSheet } from "react-native";
 import TabNavigator from '../components/TabNavigator';
+import ProfileButton from '../components/ProfileButton';
 
 const styles = StyleSheet.create({
   mainView: {
@@ -11,6 +12,7 @@ const styles = StyleSheet.create({
 const VisitationList = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.mainView}>
+      <ProfileButton />
       <Text>Visitation List</Text>
       <TabNavigator />
     </SafeAreaView>

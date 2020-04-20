@@ -2,6 +2,11 @@ import reduxToolkit from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 import { counterSlice } from "./deacons";
 import { counterSagas } from "./deacons/sagas";
+import db from '../database/index';
+
+db.info().then(function (info) {
+  console.log(info);
+});
 
 const sagaMiddleware = createSagaMiddleware();
 

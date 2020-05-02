@@ -14,7 +14,7 @@ const Navigator = () => {
 			initialRouteName="Home"
 			screenOptions={{
 				headerStyle: {
-					backgroundColor: theme.colors.backdrop,
+					backgroundColor: theme.colors.background,
 				},
 				headerTintColor: theme.colors.text,
 				headerTitleStyle: {
